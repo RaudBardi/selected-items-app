@@ -1,5 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# Форма управления учетными записями
+![Vue](https://img.shields.io/badge/Vue-3.4-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3-orange)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Приложение для управления выбором товаров.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Стек технологий
+
+- **Vue.js 3** (Composition API)
+- **TypeScript** (с TSX синтаксисом)
+- **Pinia** (управление состоянием)
+- **Vite** (сборка проекта)
+
+## Установка и запуск
+
+1. Клонировать репозиторий:
+- git clone https://github.com/RaudBardi/selected-items-app
+- cd account-management-form
+- npm install
+
+## Запустите dev-сервер
+npm run dev
+
+## Для production-сборки
+npm run build
+
+📄 Лицензия
+MIT © 2025 [RaudBardi/Vladimir Zubkov]
