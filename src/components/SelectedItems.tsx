@@ -1,5 +1,6 @@
-import { defineComponent, PropType } from 'vue'
-import { Item } from '@/stores/items'
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import type { Item } from '@/stores/items'
 import styles from './SelectedItems.module.css'
 
 export default defineComponent({
@@ -7,10 +8,6 @@ export default defineComponent({
     props: {
         title: {
             type: String,
-            required: true
-        },
-        items: {
-            type: Array as PropType<Item[]>,
             required: true
         },
         items: {
