@@ -1,0 +1,10 @@
+.section {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+.left, .right {
+    display: flex;
+    flex: 1;
+}
