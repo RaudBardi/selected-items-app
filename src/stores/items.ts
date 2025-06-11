@@ -77,18 +77,7 @@ export const useItemsStore = defineStore('items', () => {
         selectedItemsLeft
     };
 }, {
-    persist: {
-        enabled: true,
-        strategies: [
-            {
-                key: 'items_state',
-                storage: localStorage,
-                paths: ['selectedUserItems', 'selectedAvailableItem'],
-                serializer: {
-                    serialize: JSON.stringify,
-                    deserialize: JSON.parse
-                }
-            }
-        ]
-    }
+    persist: true,
 });
+
+export type { Item };

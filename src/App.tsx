@@ -2,7 +2,7 @@ import { defineComponent } from 'vue'
 import TopSection from './components/TopSection'
 import BottomSection from './components/BottomSection'
 import styles from './App.module.css'
-import { useItemsStore } from '@/stores/items';
+import { useItemsStore } from './stores/items';
 
 export default defineComponent({
     name: 'App',
