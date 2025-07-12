@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
-import type { Item } from '@/stores/items'
+import type { Item } from '@/types/item'
 import styles from './ItemList.module.css'
 
 export default defineComponent({

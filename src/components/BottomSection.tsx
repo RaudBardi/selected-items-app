@@ -1,5 +1,6 @@
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { useItemsStore } from '@/stores/items'
+import { UI_TEXT } from '@/constants/selection'
 import ItemList from './ItemList'
 import styles from './BottomSection.module.css'
 
@@ -11,29 +12,30 @@ export default defineComponent({
     setup() {
         const store = useItemsStore()
 
+        // Computed properties for better performance and readability
+        const userItemsConfig = computed(() => ({
+            title: UI_TEXT.USER_ITEMS_TITLE,
+            items: store.userItems,
+            selectedItems: store.selectedUserItems,
+            maxSelection: store.maxUserItems,
+            onSelect: store.toggleUserItem
+        }))
+
+        const availableItemsConfig = computed(() => ({
+            title: UI_TEXT.AVAILABLE_ITEMS_TITLE,
+            items: store.availableItems,
+            selectedItems: store.selectedAvailableItems,
+            singleSelection: true,
+            onSelect: store.setAvailableItem
+        }))
+
         return () => (
             <div class={styles.section}>
                 <div class={styles.left}>
-                    <ItemList
-                        title="Вещи у пользователя"
-                        items={store.userItems}
-                        selectedItems={store.selectedUserItems}
-                        maxSelection={6}
-                        onSelect={store.toggleUserItem}
-                    />
+                    <ItemList {...userItemsConfig.value} />
                 </div>
                 <div class={styles.right}>
-                    <ItemList
-                        title="Вещи на выбор"
-                        items={store.availableItems}
-                        selectedItems={
-                            store.selectedAvailableItem
-                                ? [store.selectedAvailableItem]
-                                : []
-                        }
-                        singleSelection={true}
-                        onSelect={store.setAvailableItem}
-                    />
+                    <ItemList {...availableItemsConfig.value} />
                 </div>
             </div>
         )

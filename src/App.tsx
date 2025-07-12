@@ -2,7 +2,8 @@ import { defineComponent } from 'vue'
 import TopSection from './components/TopSection'
 import BottomSection from './components/BottomSection'
 import styles from './App.module.css'
-import { useItemsStore } from './stores/items';
+import { useItemsStore } from './stores/items'
+import { UI_TEXT } from './constants/selection'
 
 export default defineComponent({
     name: 'App',
@@ -20,7 +21,7 @@ export default defineComponent({
         return () => (
             <div class={styles.app}>
                 <div>
-                    <div onClick={handleReset}>Очистить</div>
+                    <div onClick={handleReset}>{UI_TEXT.RESET_BUTTON}</div>
                 </div>
                 <TopSection />
                 <BottomSection />
